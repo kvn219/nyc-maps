@@ -1,7 +1,7 @@
 # NYC-MAPS
 Various interactive NY maps made with d3.js and leaflet.
 
-## Projects
+## Interactive maps
 
 Measuring Diversity in New York State - [view](https://kvn219.github.io/NYC-MAPS/MEASURING-NYS-DIVERSITY/)
 
