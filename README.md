@@ -1,2 +1,18 @@
 # NYC-MAPS
-Various NY maps made with d3.js and leaflet.
+Various interactive NY maps made with d3.js and leaflet.
+
+## Projects
+
+- MEASURING-NYS-DIVERSITY
+
+- MULTIPLE-MAPS-ON-A-PAGE
+
+- NY-TABULATION-AREAS
+
+- NYC-SCHOOL-DISTRICTS
+
+- NYC-SUBWAY-STATIONS
+
+- PHO-SHOPS
+
+- PROFILE
