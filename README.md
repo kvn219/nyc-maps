@@ -3,16 +3,12 @@ Various interactive NY maps made with d3.js and leaflet.
 
 ## Projects
 
-- MEASURING-NYS-DIVERSITY
+Measuring Diversity in New York State - view [here](https://kvn219.github.io/NYC-MAPS/MEASURING-NYS-DIVERSITY/)
 
-- MULTIPLE-MAPS-ON-A-PAGE
+New York City School Districts - view [here](https://kvn219.github.io/NYC-MAPS/NYC-SCHOOL-DISTRICTS/)
 
-- NY-TABULATION-AREAS
+Multiple Maps on a Page - view [here](https://kvn219.github.io/NYC-MAPS/MULTIPLE-MAPS-ON-A-PAGE/)
 
-- NYC-SCHOOL-DISTRICTS
+New York Tabulation Areas - view [here](https://kvn219.github.io/NYC-MAPS/NY-TABULATION-AREAS/)
 
-- NYC-SUBWAY-STATIONS
-
-- PHO-SHOPS
-
-- PROFILE
+New York City Subways - view [here](https://kvn219.github.io/NYC-MAPS/NYC-SUBWAY-STATIONS)
