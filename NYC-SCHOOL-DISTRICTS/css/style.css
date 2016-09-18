@@ -1,0 +1,41 @@
+#map {
+	background: whitesmoke;
+	position: absolute;
+	top: 20px;
+}
+
+#number {
+	position: absolute;
+	font-family: "Proxima Nova", Montserrat, sans-serif;
+	top: 70px;
+	left: 125px;
+	font-size: 3.0em;
+	color: white;
+}
+h1 {
+	position: absolute;
+	left: 20px;
+	top: 10px;
+	font-family: "Proxima Nova", Montserrat, sans-serif;
+	font-size: 3.5em;
+	font-weight: 100;
+	color: black;
+}
+
+h2 {
+	left: 100px;
+	text-align: center;
+	width: 200px;
+	height: 100px;
+	background-color: black;
+	box-shadow: 5px 10px 5px #888888;
+}
+
+.district {
+  stroke: #fff;
+  fill:black;
+}
+.hover {
+	fill: white;
+	stroke: black;
+}

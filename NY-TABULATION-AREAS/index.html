@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="js/jquery-2.2.1.js"></script>
+<style>
+
+body {
+  font: 12px sans-serif;
+}
+
+path {
+  stroke-width: 0.25px;
+  stroke: #ffffff;
+  fill: #000000;
+  cursor: pointer;
+}
+
+path:hover, path.highlighted {
+  fill: #868686;
+}
+
+div.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-weight: bold;
+  padding: 4px 8px;
+  display: none;
+}
+
+</style>
+
+<body>
+<script src="js/d3.min.js"></script>
+<script src="js/topojson.v1.min.js"></script>
+<script>
+
+//Map dimensions (in pixels)
+var width = 600,
+    height = 598;
+
+//Map projection
+var projection = d3.geo.conicEqualArea()
+    .scale(77213.46151596894)
+    .center([-73.49026653041983,40.370091889358534]) //projection center
+    .parallels([40.4961236005381,40.9155410758976]) //parallels for conic projection
+    .rotate([73.49026653041983]) //rotation for conic projection
+    .translate([-66159.00527249955,-29007.829936853672]) //translate to center the map in view
+
+//Generate paths based on projection
+var path = d3.geo.path()
+    .projection(projection);
+
+//Create an SVG
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+//Group for the map features
+var features = svg.append("g")
+    .attr("class","features");
+
+//Create a tooltip, hidden at the start
+var tooltip = d3.select("body").append("div").attr("class","tooltip");
+
+//Keeps track of currently zoomed feature
+var centered;
+
+d3.json("nyta.topojson",function(error,geodata) {
+  if (error) return console.log(error); //unknown error, check the console
+
+  //Create a path for each map feature in the data
+  features.selectAll("path")
+    .data(topojson.feature(geodata,geodata.objects.collection).features) //generate features from TopoJSON
+    .enter()
+    .append("path")
+    .attr("d",path)
+    .on("mouseover",showTooltip)
+    .on("mousemove",moveTooltip)
+    .on("mouseout",hideTooltip)
+    .on("click",clicked);
+
+});
+
+// Zoom to feature on click
+function clicked(d,i) {
+
+  //Add any other onClick events here
+
+  var x, y, k;
+
+  if (d && centered !== d) {
+    // Compute the new map center and scale to zoom to
+    var centroid = path.centroid(d);
+    var b = path.bounds(d);
+    x = centroid[0];
+    y = centroid[1];
+    k = .8 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+    centered = d
+  } else {
+    x = width / 2;
+    y = height / 2;
+    k = 1;
+    centered = null;
+  }
+
+  // Highlight the new feature
+  features.selectAll("path")
+      .classed("highlighted",function(d) {
+          return d === centered;
+      })
+      .style("stroke-width", 0.25 / k + "px"); // Keep the border width constant
+
+  //Zoom and re-center the map
+  //Uncomment .transition() and .duration() to make zoom gradual
+  features
+      //.transition()
+      //.duration(500)
+      .attr("transform","translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
+}
+
+
+//Position of the tooltip relative to the cursor
+var tooltipOffset = {x: 5, y: -25};
+
+//Create a tooltip, hidden at the start
+function showTooltip(d) {
+  moveTooltip();
+
+  tooltip.style("display","block")
+      .text(d.properties.NTAName);
+}
+
+//Move the tooltip to track the mouse
+function moveTooltip() {
+  tooltip.style("top",(d3.event.pageY+tooltipOffset.y)+"px")
+      .style("left",(d3.event.pageX+tooltipOffset.x)+"px");
+}
+
+//Create a tooltip, hidden at the start
+function hideTooltip() {
+  tooltip.style("display","none");
+}
+</script>
