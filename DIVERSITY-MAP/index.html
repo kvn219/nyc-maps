@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>NYU Wagner Education and Diversity Capstone Visualization</title>
+        <script src="js/d3.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href='css/google_fonts.css' rel='stylesheet' type='text/css'>
+        <link href='css/schools.css' rel='stylesheet'>
+        <link href='css/scatter.css' rel='stylesheet'>
+    </head>
+
+    <body>
+        <div id="container" class="container-fluid text-center">
+            <h3 align="left"><strong>Beyond Classroom Diversity:</strong> How Community Context Influences Student Achievement in New York State</h3>
+            <p align="left">
+                Over the past 30 years, an interesting phenomenon has taken shape in education systems in the United States: despite rising levels of national diversity, public schools have become increasingly racially segregated. Relational diversity is the discrepancy
+                of diversity experienced in one’s surroundings versus the classroom. To explore the impact of relational diversity education on the New York State English Language Art (ELA) proficiency rates, we used relational diversity as an index (RDI)
+                and compared it to poverty, limited English proficiency, and students with disabilities. The <a href="https://en.wikipedia.org/wiki/Diversity_index">Blau Index </a>was used with population estimates from the American Community
+                Survey (2008-13) census tracts to calculate a community's diversity. For school diversity, we use data from the New York State Department of Education <a href="https://data.nysed.gov/downloads.php">(NYSED 2013-2014).</a> You can review
+                our methodology <a href="http://kvn219.github.io/content/NYSED/MAP/">here</a> and attribution<a href="http://kvn219.github.io/content/NYSED/README.md"> here.</a>
+                <div class="col-sm-9">
+            </p>
+            <div id="chart"> </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="row">
+                    <h4 align="left">Explore the data</h4>
+                    <p align="left">
+                        Begin by selecting one of the bivariate relationships. Hover over the circles on the plot for more information about each school. Click a circle and schools within the same district will be highlighted. You can also use the search toolbar to search for
+                        a school. </p>
+                    <div align="left" id="controls"></div>
+                </div>
+                <div class="row">
+                    <p align="left">
+                        <br />The legend below classifies different diversity groups. Hover over the legend below to highlight the different classifications on the plot. If clicked, the visualization will subset data based on the group selected. <strong>To reset the data click on the legend title</strong>.
+                    </p>
+                    <div align="left" id="legend"> </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/scatter.js"></script>
+        <script src="js/schools.js"></script>
+    </body>
+
+</html>

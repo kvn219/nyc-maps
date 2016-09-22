@@ -1,0 +1,80 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: black;
+    text-align: left;
+}
+
+strong {
+    /*color: #57068c;*/
+}
+
+html,
+body {
+    width: auto;
+    height: auto;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+.xAxis path,
+.xAxis line {
+    fill: none;
+    font-size: 1.0em;
+    stroke: #B3B3B3;
+    shape-rendering: crispEdges;
+}
+
+.xAxis text {
+    font-size: .8em;
+    fill: #6B6B6B;
+}
+
+.yAxis path,
+.yAxis line {
+    fill: none;
+    stroke: #B3B3B3;
+    shape-rendering: crispEdges;
+    background-color: white;
+}
+
+.yAxis text {
+    font-size: 0.8em;
+    fill: #6B6B6B;
+}
+
+.popover {
+    pointer-events: none;
+    font-size: 1.5em;
+    opacity: 0.8;
+}
+
+.legendTitle {
+    fill: #1A1A1A;
+    color: #1A1A1A;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.legendText {
+    fill: #949494;
+    text-anchor: start;
+    font-size: 0.6em;
+    text-align: left;
+}
+
+@media (min-width: 500px) {
+    .col-sm-3,
+    .col-sm-9 {
+        float: left;
+    }
+    .col-sm-9 {
+        width: 70%;
+    }
+    .col-sm-3 {
+        width: 20%;
+    }
+}

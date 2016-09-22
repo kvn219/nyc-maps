@@ -1,0 +1,21 @@
+#highlight {
+    width: 150px;
+    height: 28px;
+    padding: 5px 5px;
+    font-size: 12px;
+    line-height: 14px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    outline: black;
+}
+
+#title {
+    color: black;
+    font-size: 1.3em;
+}
+
+div.col-sm-3 {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
